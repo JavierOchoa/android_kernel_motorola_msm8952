@@ -3074,6 +3074,7 @@ int msm_ipc_router_send_to(struct msm_ipc_port *src,
 		return -ENODEV;
 	}
 
+	/*
 	if (src->check_send_permissions) {
 		ret = src->check_send_permissions(rport_ptr->sec_rule);
 		if (ret <= 0) {
@@ -3082,7 +3083,7 @@ int msm_ipc_router_send_to(struct msm_ipc_port *src,
 				__func__, current->comm);
 			return -EPERM;
 		}
-	}
+	}*/
 
 	if (dst_node_id == IPC_ROUTER_NID_LOCAL && !src->rport_info) {
 		src_rport_ptr = ipc_router_create_rport(IPC_ROUTER_NID_LOCAL,
